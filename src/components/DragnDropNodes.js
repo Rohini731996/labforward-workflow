@@ -79,7 +79,7 @@ const DnDFlow = () => {
           <ReactFlow
             style={{
               background:
-                theme === "light" ? "rgb(215,215,215)" : "rgb(35,35,35)"
+                theme !== "light" ? "rgb(215,215,215)" : "rgb(35,35,35)"
             }}
             elements={elements}
             onConnect={onConnect}
@@ -91,7 +91,7 @@ const DnDFlow = () => {
             edgeTypes={edgeTypes}
             connectionLineStyle={{ stroke: "#3498db", strokeWidth: 2 }}
           >
-            <Controls style={{marginBottom:"5rem"}}>
+            <Controls style={{marginBottom:"0rem"}}>
               <ControlButton>""</ControlButton>
             </Controls>
             <Background

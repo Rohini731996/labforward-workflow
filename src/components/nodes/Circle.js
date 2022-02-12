@@ -14,7 +14,7 @@ const CircleNode = (self) => {
         onConnect={(params) => console.log("handle onConnect", params)}
       />
       <Handle
-        type="source"
+        type="target"
         position="left"
         id="target-2"
         style={{ left: "-5px", background: Colors.target }}
