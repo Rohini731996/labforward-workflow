@@ -1,41 +1,41 @@
 import { Handle } from "react-flow-renderer";
 import { Colors } from "./Colors";
-import { CircleNodeWrapper, InputLabel } from "./styles";
+import { DiamondNodeWrapper, InputLabel } from "./styles";
 
-const CircleNode = (self) => {
+const DiamondNode = (self) => {
   return (
-    <CircleNodeWrapper>
+    <DiamondNodeWrapper>
       <InputLabel>{self.data.label}</InputLabel>
       <Handle
         type="target"
         position="top"
         id="target-1"
-        style={{ left: "50%", background: Colors.target }}
+        style={{ background: Colors.target, left: "-0.5%" }}
         onConnect={(params) => console.log("handle onConnect", params)}
       />
       <Handle
-        type="source"
-        position="left"
+        type="target"
+        position="bottom"
         id="target-2"
-        style={{ left: "-5px", background: Colors.target }}
+        style={{ background: Colors.target,left:'1%' }}
         onConnect={(params) => console.log("handle onConnect", params)}
       />
       <Handle
-        type="source"
+        type="left"
         position="right"
         id="source-1"
-        style={{ background: Colors.source }}
+        style={{ top: "-0.5%", background: Colors.source }}
         onConnect={(params) => console.log("handle onConnect", params)}
       />
       <Handle
         type="source"
         position="bottom"
         id="source-2"
-        style={{ left: "50%", background: Colors.source }}
+        style={{ left: "99%", background: Colors.source }}
         onConnect={(params) => console.log("handle onConnect", params)}
       />
-    </CircleNodeWrapper>
+    </DiamondNodeWrapper>
   );
 };
 
-export default CircleNode;
+export default DiamondNode;

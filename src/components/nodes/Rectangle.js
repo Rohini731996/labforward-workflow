@@ -1,32 +1,43 @@
-import { Handle } from "react-flow-renderer";
-import { NodeWrapper, InputLabel } from "./styles";
-
-const Rectangle = (self) => {
+import { Handle, Position } from "react-flow-renderer";
+import { RectangleNodeWrapper, InputLabel } from "./styles";
+import { Colors } from "./Colors";
+import React, { useState } from "react";
+const Rectangle = (self = '') => {
+  const [text, settext] = useState('')
   return (
-    <NodeWrapper>
+    <RectangleNodeWrapper component={"rectangle"}>
       <InputLabel>{self.data.label}</InputLabel>
+      <input value={text} onChange={e => settext(e.target.value)}>
+      </input>
       <Handle
         type="target"
-        position="top"
+        position={Position.Top}
         id="target-1"
-        style={{ left: "50%" }}
+        style={{ background: Colors.target }}
+        onConnect={(params) => console.log("handle onConnect", params)}
+      />
+      <Handle
+        type="target"
+        position={Position.Left}
+        id="target-2"
+        style={{ background: Colors.target }}
         onConnect={(params) => console.log("handle onConnect", params)}
       />
       <Handle
         type="source"
-        position="bottom"
+        position={Position.Right}
         id="source-1"
-        style={{ left: "40%" }}
+        style={{ background: Colors.source }}
         onConnect={(params) => console.log("handle onConnect", params)}
       />
       <Handle
         type="source"
-        position="bottom"
+        position={Position.Bottom}
         id="source-2"
-        style={{ left: "60%" }}
+        style={{ background: Colors.source }}
         onConnect={(params) => console.log("handle onConnect", params)}
       />
-    </NodeWrapper>
+    </RectangleNodeWrapper>
   );
 };
 

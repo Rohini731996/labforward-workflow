@@ -1,4 +1,6 @@
 import React from 'react';
+import './dnd.css'
+import { NodeWrapper, InputLabel } from "./styles";
 
 export default () => {
   const onDragStart = (event, nodeType) => {
@@ -9,16 +11,31 @@ export default () => {
   return (
     <aside>
       <div className="description">Select Shapes</div>
-      <div className="dndnode input" onDragStart={(event) => onDragStart(event, 'input')} draggable>
-        Input Node
-      </div>
-      <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'default')} draggable>
-        Default Node
-      </div>
-    
-      <div className="dndnode output" onDragStart={(event) => onDragStart(event, 'output')} draggable>
-        Output Node
-      </div>
+      <NodeWrapper>
+        <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'input')} draggable>
+         Input
+        </div>
+      </NodeWrapper>
+      <NodeWrapper>
+        <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'rectangle')} draggable>
+         Rectangle
+        </div>
+      </NodeWrapper>
+      <NodeWrapper>
+        <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'square')} draggable>
+         Square
+        </div>
+      </NodeWrapper>
+      <NodeWrapper>
+        <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'circle')} draggable>
+         circle
+        </div>
+      </NodeWrapper>
+      <NodeWrapper>
+        <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'diamond')} draggable>
+          Diamond
+        </div>
+      </NodeWrapper>
     </aside>
   );
 };

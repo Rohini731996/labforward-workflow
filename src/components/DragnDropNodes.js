@@ -10,6 +10,7 @@ import ReactFlow, {
   isEdge
 } from 'react-flow-renderer';
 import customNodes from './CustomNodes';
+import customEdges from './CustomEdges';
 
 import Sidebar from './Sidebar';
 
@@ -20,7 +21,7 @@ const initialElements = [
     id: '1',
     type: 'input',
     data: { label: 'input node' },
-    position: { x: 250, y: 5 },
+    position: { x: 250, y: 100 },
   },
 ];
 
@@ -61,6 +62,11 @@ const DnDFlow = () => {
 
     setElements((es) => es.concat(newNode));
   };
+
+  const edgeTypes = {
+    custom: customEdges
+  };
+
   let theme = 'light'
   return (
     <div className="dndflow">
@@ -79,16 +85,17 @@ const DnDFlow = () => {
             onDrop={onDrop}
             onDragOver={onDragOver}
             nodeTypes={customNodes}
+            connectionLineStyle={{ stroke: "#3498db", strokeWidth: 2 }}
           >
-            <Controls>
-              <ControlButton>SAFDS</ControlButton>
+            <Controls style={{marginBottom:"5rem"}}>
+              <ControlButton>""</ControlButton>
             </Controls>
             <Background
               gap={55}
               color={theme === "light" ? "#7f8c8d" : "rgb(170,170,170)"}
               size={theme === "light" ? "2.5px" : "1px"}
             />
-            <MiniMap nodeColor="gray" />
+            <MiniMap nodeColor="#00FF00" />
           </ReactFlow>
         </div>
 
