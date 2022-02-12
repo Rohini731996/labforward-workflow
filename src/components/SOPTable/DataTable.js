@@ -18,7 +18,7 @@ class DataTable extends React.Component {
     handleAddRow = () => {
         const item = {
             name: "",
-            mobile: ""
+            value: ""
         };
         this.setState({
             rows: [...this.state.rows, item]
@@ -34,13 +34,17 @@ class DataTable extends React.Component {
         rows.splice(idx, 1)
         this.setState({ rows })
     }
+
+    saveData=()=>{
+        
+    }
     render() {
         return (
             <div>
                 <div className="container">
                     <div className="row clearfix">
                         <div className="col-md-12 column">
-                        <h1>1. Data Tables: Weight of water</h1>
+                            <h1>1. Data Tables: Weight of water</h1>
                             <table
                                 className="table table-bordered table-hover"
                                 id="tab_logic"
@@ -67,7 +71,7 @@ class DataTable extends React.Component {
                                                     name="percentage"
                                                     value={'100%'}
                                                     className="form-control"
-                                                    style={{textAlign:'center'}}
+                                                    style={{ textAlign: 'center' }}
                                                 />
                                             </td>
                                             <td>
@@ -83,7 +87,7 @@ class DataTable extends React.Component {
                                                 <input
                                                     type="text"
                                                     name="dispense2"
-                                                    value={this.state.rows[idx].mobile}
+                                                    value={this.state.rows[idx].value}
                                                     onChange={this.handleChange(idx)}
                                                     className="form-control"
                                                 />
@@ -92,7 +96,7 @@ class DataTable extends React.Component {
                                                 <input
                                                     type="text"
                                                     name="dispense3"
-                                                    value={this.state.rows[idx].mobile}
+                                                    value={this.state.rows[idx].value}
                                                     onChange={this.handleChange(idx)}
                                                     className="form-control"
                                                 />
@@ -101,7 +105,7 @@ class DataTable extends React.Component {
                                                 <input
                                                     type="text"
                                                     name="dispense4"
-                                                    value={this.state.rows[idx].mobile}
+                                                    value={this.state.rows[idx].value}
                                                     onChange={this.handleChange(idx)}
                                                     className="form-control"
                                                 />
@@ -110,7 +114,7 @@ class DataTable extends React.Component {
                                                 <input
                                                     type="text"
                                                     name="dispense5"
-                                                    value={this.state.rows[idx].mobile}
+                                                    value={this.state.rows[idx].value}
                                                     onChange={this.handleChange(idx)}
                                                     className="form-control"
                                                 />
@@ -127,7 +131,10 @@ class DataTable extends React.Component {
                                     ))}
                                 </tbody>
                             </table>
-                            <button onClick={this.handleAddRow} className="btn btn-primary">
+                            <button onClick={this.saveData} className="btn btn-primary">
+                                Save Data
+                            </button>
+                            {/* <button onClick={this.handleAddRow} className="btn btn-primary">
                                 Add Row
                             </button>
                             <button
@@ -135,7 +142,7 @@ class DataTable extends React.Component {
                                 className="btn btn-danger float-right"
                             >
                                 Delete Last Row
-                            </button>
+                            </button> */}
                         </div>
                     </div>
                 </div>

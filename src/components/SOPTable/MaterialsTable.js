@@ -18,7 +18,7 @@ class MaterialsTable extends React.Component {
     handleAddRow = () => {
         const item = {
             name: "",
-            mobile: ""
+            value: ""
         };
         this.setState({
             rows: [...this.state.rows, item]
@@ -40,7 +40,7 @@ class MaterialsTable extends React.Component {
                 <div className="container">
                     <div className="row clearfix">
                         <div className="col-md-12 column">
-                            <h1>3.Material used:</h1>
+                            <h1>3. Material used:</h1>
                             <table
                                 className="table table-bordered table-hover"
                                 id="tab_logic"

@@ -18,7 +18,7 @@ class CalculationTable extends React.Component {
     handleAddRow = () => {
         const item = {
             name: "",
-            mobile: ""
+            value: ""
         };
         this.setState({
             rows: [...this.state.rows, item]
@@ -40,7 +40,7 @@ class CalculationTable extends React.Component {
                 <div className="container">
                     <div className="row clearfix">
                         <div className="col-md-12 column">
-                        <h1> 2. Calculate Mean, Std. Deviation, Accuracy and Precision</h1>
+                            <h1> 2. Calculate Mean, Std. Deviation, Accuracy and Precision</h1>
                             <table
                                 className="table table-bordered table-hover"
                                 id="tab_logic"
@@ -66,7 +66,7 @@ class CalculationTable extends React.Component {
                                                     name="percentage"
                                                     value={'100%'}
                                                     className="form-control"
-                                                    style={{textAlign:'center'}}
+                                                    style={{ textAlign: 'center' }}
                                                 />
                                             </td>
                                             <td>
@@ -82,7 +82,7 @@ class CalculationTable extends React.Component {
                                                 <input
                                                     type="text"
                                                     name="deviation"
-                                                    value={this.state.rows[idx].mobile}
+                                                    value={this.state.rows[idx].value}
                                                     onChange={this.handleChange(idx)}
                                                     className="form-control"
                                                 />
@@ -91,7 +91,7 @@ class CalculationTable extends React.Component {
                                                 <input
                                                     type="text"
                                                     name="accuracy"
-                                                    value={this.state.rows[idx].mobile}
+                                                    value={this.state.rows[idx].value}
                                                     onChange={this.handleChange(idx)}
                                                     className="form-control"
                                                 />
@@ -100,12 +100,12 @@ class CalculationTable extends React.Component {
                                                 <input
                                                     type="text"
                                                     name="precision"
-                                                    value={this.state.rows[idx].mobile}
+                                                    value={this.state.rows[idx].value}
                                                     onChange={this.handleChange(idx)}
                                                     className="form-control"
                                                 />
                                             </td>
-                                           
+
                                             <td>
                                                 <button
                                                     className="btn btn-outline-danger btn-sm"
@@ -118,7 +118,7 @@ class CalculationTable extends React.Component {
                                     ))}
                                 </tbody>
                             </table>
-                            <button onClick={this.handleAddRow} className="btn btn-primary">
+                            {/* <button onClick={this.handleAddRow} className="btn btn-primary">
                                 Add Row
                             </button>
                             <button
@@ -126,7 +126,7 @@ class CalculationTable extends React.Component {
                                 className="btn btn-danger float-right"
                             >
                                 Delete Last Row
-                            </button>
+                            </button> */}
                         </div>
                     </div>
                 </div>

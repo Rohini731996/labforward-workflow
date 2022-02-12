@@ -27,6 +27,7 @@
     "reactstrap": "8.9.0",
     "redux": "4.0.5",
     "redux-thunk": "2.3.0",
+    "redux-devtools-extension": "^2.13.9",
     "styled-components": "5.2.1",
     "use-reducer-thunk": "1.0.8"
   },
