@@ -1,14 +1,12 @@
 import { Handle, Position } from "react-flow-renderer";
-import { RectangleNodeWrapper, InputLabel } from "./styles";
+import { RectangleNodeWrapper } from "./styles";
 import { Colors } from "./Colors";
 import React, { useState } from "react";
 const Rectangle = (self = '') => {
   const [text, settext] = useState('')
   return (
     <RectangleNodeWrapper component={"rectangle"}>
-      <InputLabel>{self.data.label}</InputLabel>
-      <input value={text} onChange={e => settext(e.target.value)}>
-      </input>
+      <textarea style={{margin:'2rem 1rem 0rem 0rem'}} value={text} onChange={e=>settext(e.target.value)}></textarea>
       <Handle
         type="target"
         position={Position.Top}

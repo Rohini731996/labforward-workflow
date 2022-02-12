@@ -5,7 +5,7 @@ import { SquareNodeWrapper, InputLabel } from "./styles";
 const Square = (self) => {
   return (
     <SquareNodeWrapper>
-      <InputLabel>{self.data.label}</InputLabel>
+      {/* <InputLabel>{self.data.label}</InputLabel> */}
       <Handle
         type="target"
         position="top"

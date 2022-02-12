@@ -16,14 +16,7 @@ import Sidebar from './Sidebar';
 
 import './dnd.css';
 
-const initialElements = [
-  {
-    id: '1',
-    type: 'input',
-    data: { label: 'input node' },
-    position: { x: 250, y: 100 },
-  },
-];
+const initialElements = [];
 
 let id = 0;
 const getId = () => `dndnode_${id++}`;
@@ -95,7 +88,7 @@ const DnDFlow = () => {
               color={theme === "light" ? "#7f8c8d" : "rgb(170,170,170)"}
               size={theme === "light" ? "2.5px" : "1px"}
             />
-            <MiniMap nodeColor="#00FF00" />
+            <MiniMap  nodeColor="#00FF00" />
           </ReactFlow>
         </div>
 

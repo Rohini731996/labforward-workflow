@@ -12,27 +12,26 @@ export default () => {
     <aside>
       <div className="description">Select Shapes</div>
       <NodeWrapper>
-        <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'input')} draggable>
-         Input
-        </div>
-      </NodeWrapper>
-      <NodeWrapper>
         <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'rectangle')} draggable>
-         Rectangle
+          <div className="dndnode rectangle" />
+          Rectangle
         </div>
       </NodeWrapper>
       <NodeWrapper>
         <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'square')} draggable>
-         Square
+          <div className="dndnode square" />
+          Square
         </div>
       </NodeWrapper>
       <NodeWrapper>
         <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'circle')} draggable>
-         circle
+          <div className="dndnode circle" />
+          Circle
         </div>
       </NodeWrapper>
       <NodeWrapper>
         <div className="dndnode default" onDragStart={(event) => onDragStart(event, 'diamond')} draggable>
+          <div className="dndnode diamond" />
           Diamond
         </div>
       </NodeWrapper>

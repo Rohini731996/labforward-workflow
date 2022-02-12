@@ -5,7 +5,7 @@ import { CircleNodeWrapper, InputLabel } from "./styles";
 const CircleNode = (self) => {
   return (
     <CircleNodeWrapper>
-      <InputLabel>{self.data.label}</InputLabel>
+      {/* <InputLabel>{self.data.label}</InputLabel> */}
       <Handle
         type="target"
         position="top"

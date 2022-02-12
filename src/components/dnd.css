@@ -31,17 +31,44 @@
   }
   
   .dndflow .dndnode {
-    height: 40px;
+    height: 50px;
     padding: 10px;
     border-radius: 2px;
     margin-bottom: 5px;
     text-align: center;
     cursor: grab;
     color: white;
+    justify-content: center;
     transition: all 0.1s ease;
   }
   .dndflow .dndnode:hover {
     transform: scale(1.1);
+  }
+  .dndflow .dndnode .rectangle{
+    height: 10px;
+    width: 30px;
+    background:rgb(218, 111, 111) 0%;
+    margin: 0rem 1.5rem ;
+  }
+  .dndflow .dndnode .circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background: rgb(199, 177, 177) 99%;
+    margin: 0rem 2rem ;
+  }
+  .dndflow .dndnode .square{
+    height: 15px;
+    width: 15px;
+    background: rgb(207, 162, 162) 51%;
+    margin: 0rem 2rem ;
+  }
+  .dndflow .dndnode .diamond{
+    background: rgb(204, 167, 167) 100%;
+    margin: 0.1rem 2.5rem ;
+    height: 12px;
+    width:9px;
+    transform:rotate(45deg);
   }
 
   .dndflow .description {

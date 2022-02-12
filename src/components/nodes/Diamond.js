@@ -5,7 +5,7 @@ import { DiamondNodeWrapper, InputLabel } from "./styles";
 const DiamondNode = (self) => {
   return (
     <DiamondNodeWrapper>
-      <InputLabel>{self.data.label}</InputLabel>
+      {/* <InputLabel>{self.data.label}</InputLabel> */}
       <Handle
         type="target"
         position="top"
