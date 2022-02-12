@@ -1,0 +1,98 @@
+.dndflow {
+    width: 100%;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  
+  .dndflow aside {
+    padding: 15px 10px;
+    font-size: 16px;
+    background: linear-gradient(
+      to right,
+      rgb(218, 111, 111) 0%,
+      rgb(207, 162, 162) 51%,
+      rgb(199, 177, 177) 99%,
+      rgb(204, 167, 167) 100%
+    );
+    resize: both;
+    overflow: auto;
+    position: absolute;
+    top: 10%;
+    z-index: 5;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 6px 2px 14px -9px rgba(235, 223, 235, 1);
+    max-height: 100%;
+    min-width: 150px;
+  }
+  
+  .dndflow .dndnode {
+    height: 40px;
+    padding: 10px;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    text-align: center;
+    cursor: grab;
+    color: white;
+    transition: all 0.1s ease;
+    border: inset rgb(175, 28, 77);
+  }
+  .dndflow .dndnode:hover {
+    transform: scale(1.1);
+  }
+
+  .dndflow .description {
+    margin: 1rem 1rem;
+    margin-left: 2rem;
+    color: rgb(48, 40, 40);
+  }
+  
+  .dndflow .dndnode.common {
+    background: rgb(85, 85, 85);
+  }
+  
+  .dndflow .dndnode.functions {
+    background: rgb(85, 85, 85);
+  }
+  .dndflow .dndnode.network {
+    background: #c22ecf;
+  }
+  .dndflow .dndnode.sequences {
+    background: #e75c1b;
+  }
+  .dndflow .dndnode.storage {
+    background: #058516;
+  }
+  
+  /* .dndflow .dndnode.special {
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    color: aqua;
+  } */
+  .dndflow .dndnode.special.donut {
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    color: aqua;
+  }
+  .dndflow .dndnode.special.latex {
+    background-color: #332546;
+    color: white;
+  }
+  
+  .dndflow .reactflow-wrapper {
+    height: 100%;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .dndflow {
+      flex-direction: row;
+    }
+  
+    .dndflow aside {
+      width: 7%;
+      border-right: 1px solid black;
+      max-width: 500px;
+      min-width: 100px;
+    }
+  }
+  
