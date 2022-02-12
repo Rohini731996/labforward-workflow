@@ -1,6 +1,6 @@
 import React from 'react';
 import './dnd.css'
-import { NodeWrapper, InputLabel } from "./styles";
+import { NodeWrapper } from "./styles";
 
 export default () => {
   const onDragStart = (event, nodeType) => {

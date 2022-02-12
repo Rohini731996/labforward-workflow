@@ -25,7 +25,17 @@ const DnDFlow = () => {
   const reactFlowWrapper = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [elements, setElements] = useState(initialElements);
-  const onConnect = (params) => setElements((els) => addEdge(params, els));
+  const onConnect = (params) => setElements((els) => addEdge(
+   { 
+     ...params, 
+     animated:true,
+     sourceX:10,
+     sourceY:10,
+     style: { stroke: 'green', strokeWidth: "3px" },
+     data: { source: "", target: "", payload: "test" }
+   },
+     els
+    ));
   const onElementsRemove = (elementsToRemove) =>
     setElements((els) => removeElements(elementsToRemove, els));
 
@@ -78,6 +88,7 @@ const DnDFlow = () => {
             onDrop={onDrop}
             onDragOver={onDragOver}
             nodeTypes={customNodes}
+            edgeTypes={edgeTypes}
             connectionLineStyle={{ stroke: "#3498db", strokeWidth: 2 }}
           >
             <Controls style={{marginBottom:"5rem"}}>
