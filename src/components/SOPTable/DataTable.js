@@ -1,9 +1,14 @@
 import React from "react";
-import { render } from "react-dom";
+import { connect } from "react-redux";
+import {
+    appendMaterialData,
+    appendCalibrationData,
+    appendCalculationData
+} from '../../redux/actions/tableAction'
 
 class DataTable extends React.Component {
     state = {
-        rows: [{}]
+        rows: [{}],
     };
     handleChange = idx => e => {
         const { name, value } = e.target;
@@ -35,8 +40,8 @@ class DataTable extends React.Component {
         this.setState({ rows })
     }
 
-    saveData=()=>{
-        
+    saveData = () => {
+        this.props.appendCalibrationData({ name: "calibration", data: this.state.rows })
     }
     render() {
         return (
@@ -151,5 +156,17 @@ class DataTable extends React.Component {
     }
 }
 
-export default DataTable;
+
+
+const mapStateToProps = (state) => {
+    return state;
+};
+
+const mapDispatchToProps = {
+    appendCalibrationData,
+    appendCalculationData,
+    appendMaterialData
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DataTable);
 

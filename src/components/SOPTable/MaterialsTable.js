@@ -1,5 +1,10 @@
 import React from "react";
-import { render } from "react-dom";
+import { connect } from "react-redux";
+import {
+    appendMaterialData,
+    appendCalibrationData,
+    appendCalculationData
+} from '../../redux/actions/tableAction'
 
 class MaterialsTable extends React.Component {
     state = {
@@ -33,6 +38,10 @@ class MaterialsTable extends React.Component {
         const rows = [...this.state.rows]
         rows.splice(idx, 1)
         this.setState({ rows })
+    }
+
+    saveData = () => {
+        this.props.appendMaterialData({ name: "material-used", data: this.state.rows })
     }
     render() {
         return (
@@ -80,6 +89,9 @@ class MaterialsTable extends React.Component {
                             <button onClick={this.handleAddRow} className="btn btn-primary">
                                 Add Row
                             </button>
+                            <button onClick={this.saveData} className="btn btn-primary">
+                            Save Data
+                            </button>
                             {/* <button
                                 onClick={this.handleRemoveRow}
                                 className="btn btn-danger float-right"
@@ -94,5 +106,15 @@ class MaterialsTable extends React.Component {
     }
 }
 
-export default MaterialsTable;
 
+const mapStateToProps = (state) => {
+    return state;
+};
+
+const mapDispatchToProps = {
+    appendCalibrationData,
+    appendCalculationData,
+    appendMaterialData
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MaterialsTable);

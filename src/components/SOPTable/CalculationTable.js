@@ -1,5 +1,10 @@
 import React from "react";
-import { render } from "react-dom";
+import { connect } from "react-redux";
+import {
+    appendMaterialData,
+    appendCalibrationData,
+    appendCalculationData
+} from '../../redux/actions/tableAction'
 
 class CalculationTable extends React.Component {
     state = {
@@ -34,6 +39,10 @@ class CalculationTable extends React.Component {
         rows.splice(idx, 1)
         this.setState({ rows })
     }
+
+    saveData = () => {
+        this.props.appendCalculationData({ name: "calculation", data: this.state.rows })
+    }
     render() {
         return (
             <div>
@@ -64,7 +73,7 @@ class CalculationTable extends React.Component {
                                                 <input
                                                     type="text"
                                                     name="percentage"
-                                                    value={'100%'}
+                                                    defaultValue={'100%'}
                                                     className="form-control"
                                                     style={{ textAlign: 'center' }}
                                                 />
@@ -118,6 +127,9 @@ class CalculationTable extends React.Component {
                                     ))}
                                 </tbody>
                             </table>
+                            <button onClick={this.saveData} className="btn btn-primary">
+                               Save Data
+                            </button>
                             {/* <button onClick={this.handleAddRow} className="btn btn-primary">
                                 Add Row
                             </button>
@@ -135,5 +147,16 @@ class CalculationTable extends React.Component {
     }
 }
 
-export default CalculationTable;
+const mapStateToProps = (state) => {
+    return state;
+};
+
+const mapDispatchToProps = {
+    appendCalibrationData,
+    appendCalculationData,
+    appendMaterialData
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CalculationTable);
+
 
